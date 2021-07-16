@@ -54,7 +54,8 @@ def create_data(path, label_dic, size=(227, 227), augment=False):
     pack = list(zip(data, labels))
     pack = shuffle(pack)
     data, labels = zip(*pack)
-
+    
+    data = list(data)
     for i in range(len(data)):
         data[i] = tf.image.per_image_standardization(data[i])
 
