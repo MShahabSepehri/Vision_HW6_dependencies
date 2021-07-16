@@ -69,7 +69,7 @@ def plot_results(history):
     plt.plot(history.history['val_acc'])
     plt.legend(['train', 'val'])
     plt.title('Top 1 accuracy')
-    plt.subplot(3, 1, 1)
+    plt.subplot(3, 1, 2)
     plt.plot(history.history['top_5_acc'])
     plt.plot(history.history['val_top_5_acc'])
     plt.legend(['train', 'val'])
