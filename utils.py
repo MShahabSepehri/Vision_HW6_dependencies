@@ -2,7 +2,6 @@ import numpy as np
 import cv2 as cv
 import tensorflow as tf
 from random import shuffle
-from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
 import os
 from Vision_HW6_dependencies import augmentation_utils as au
