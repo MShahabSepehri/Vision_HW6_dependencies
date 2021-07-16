@@ -37,7 +37,7 @@ def convert_to_oneHot(label, num_cls, eps=0):
     return one_hot_label
 
 
-def create_data(path, label_dic, size=(227, 227), augment=False):
+def create_data(path, label_dic, size=(227, 227), augment=False, eps=0):
     data = []
     labels = []
     num_cls = len(label_dic.keys())
@@ -45,7 +45,7 @@ def create_data(path, label_dic, size=(227, 227), augment=False):
         for file in files:
             data.append(get_image(os.path.join(subdir, file), size))
             label = label_dic[subdir.replace(path, '')]
-            labels.append(convert_to_oneHot(label, num_cls))
+            labels.append(convert_to_oneHot(label, num_cls, eps))
 
     if augment:
         data, labels = au.augment_data(data, labels)
